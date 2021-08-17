@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace LeetCode.RemoveElement
@@ -8,15 +7,15 @@ namespace LeetCode.RemoveElement
     {
         public static void Main(string[] args)
         {
-            int[] nums = { 0, 1, 2, 2, 3, 0, 4, 2 };
-            int   val  = 2;
+            int[]     numbers = { 0, 1, 2, 2, 3, 0, 4, 2 };
+            const int value   = 2;
 
-            int result = RemoveElement(nums, val);
+            int result = RemoveElement(numbers, value);
 
             Console.WriteLine(result);
             Console.WriteLine(new string('-', 50));
 
-            foreach (int number in nums)
+            foreach (int number in numbers)
             {
                 Console.Write(number);
             }
@@ -25,11 +24,11 @@ namespace LeetCode.RemoveElement
             Console.WriteLine(new string('-', 50));
         }
 
-        public static int RemoveElement(int[] nums, int val)
+        public static int RemoveElement(int[] numbers, int val)
         {
-            int numberOfDeletions = nums.Count(x => x == val);
+            int numberOfDeletions = numbers.Count(x => x == val);
 
-            Array.Sort(nums, Comparer<int>.Create((i, i1) =>
+            Array.Sort(numbers, (i, i1) =>
             {
                 if (i == val)
                 {
@@ -42,11 +41,9 @@ namespace LeetCode.RemoveElement
                 }
 
                 return default;
-            }));
+            });
 
-            Array.Resize(ref nums, nums.Length - numberOfDeletions);
-
-            return nums.Length;
+            return numbers.Length - numberOfDeletions;
         }
     }
 }

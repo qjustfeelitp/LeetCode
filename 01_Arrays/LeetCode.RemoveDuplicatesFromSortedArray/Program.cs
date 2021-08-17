@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCode.RemoveDuplicatesFromSortedArray
 {
@@ -6,26 +8,28 @@ namespace LeetCode.RemoveDuplicatesFromSortedArray
     {
         public static void Main(string[] args)
         {
-            int[] nums   = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
-            int   result = RemoveDuplicates(nums);
+            int[] numbers = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+            int   result  = RemoveDuplicates(numbers);
 
             Console.WriteLine(result);
             Console.WriteLine(new string('-', 50));
 
-            foreach (int number in nums)
+            foreach (int number in numbers)
             {
-                Console.Write(number);
+                Console.WriteLine(number);
             }
 
             Console.WriteLine();
             Console.WriteLine(new string('-', 50));
-
-            Console.WriteLine("Hello World!");
         }
 
-        public static int RemoveDuplicates(int[] nums)
+        public static int RemoveDuplicates(int[] numbers)
         {
-            return default;
+            int[] fromHashSet = new HashSet<int>(numbers).ToArray();
+
+            Array.Copy(fromHashSet, numbers, fromHashSet.Length);
+
+            return fromHashSet.Length;
         }
     }
 }
