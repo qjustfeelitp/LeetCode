@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.FindMaxConsecutiveOnes", "LeetCode.FindMaxConsecutiveOnes\LeetCode.FindMaxConsecutiveOnes.csproj", "{EAA9E49B-2D41-4AB3-919E-4134C551CB40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.FindMaxConsecutiveOnes", "01_Arrays\LeetCode.FindMaxConsecutiveOnes\LeetCode.FindMaxConsecutiveOnes.csproj", "{EAA9E49B-2D41-4AB3-919E-4134C551CB40}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_Arrays", "01_Arrays", "{8C98FBB4-87FA-4D67-870C-45F6AD5D7634}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.FindEvenNumbersWithEvenNumberOfDigits", "LeetCode.FindEvenNumbersWithEvenNumberOfDigits\LeetCode.FindEvenNumbersWithEvenNumberOfDigits.csproj", "{B3921597-AEF9-468B-BDCA-519DA1B0BA6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.FindEvenNumbersWithEvenNumberOfDigits", "01_Arrays\LeetCode.FindEvenNumbersWithEvenNumberOfDigits\LeetCode.FindEvenNumbersWithEvenNumberOfDigits.csproj", "{B3921597-AEF9-468B-BDCA-519DA1B0BA6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.SquaresOfASortedArray", "LeetCode.SquaresOfASortedArray\LeetCode.SquaresOfASortedArray.csproj", "{67BBE0F9-9F2C-4EE2-8CC5-6D175FF6AB67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.SquaresOfASortedArray", "01_Arrays\LeetCode.SquaresOfASortedArray\LeetCode.SquaresOfASortedArray.csproj", "{67BBE0F9-9F2C-4EE2-8CC5-6D175FF6AB67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.DuplicateZeros", "LeetCode.DuplicateZeros\LeetCode.DuplicateZeros.csproj", "{B8FF0863-E113-4776-8444-E595F39016B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.DuplicateZeros", "01_Arrays\LeetCode.DuplicateZeros\LeetCode.DuplicateZeros.csproj", "{B8FF0863-E113-4776-8444-E595F39016B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.MergeSortedArray", "LeetCode.MergeSortedArray\LeetCode.MergeSortedArray.csproj", "{9A6AC6C3-7F21-4D3E-B924-E19AB7BED741}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.MergeSortedArray", "01_Arrays\LeetCode.MergeSortedArray\LeetCode.MergeSortedArray.csproj", "{9A6AC6C3-7F21-4D3E-B924-E19AB7BED741}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.RemoveElement", "LeetCode.RemoveElement\LeetCode.RemoveElement.csproj", "{89DA2FA9-B349-4141-9C57-5358B111C6B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.RemoveElement", "01_Arrays\LeetCode.RemoveElement\LeetCode.RemoveElement.csproj", "{89DA2FA9-B349-4141-9C57-5358B111C6B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.RemoveDuplicatesFromSortedArray", "LeetCode.RemoveDuplicatesFromSortedArray\LeetCode.RemoveDuplicatesFromSortedArray.csproj", "{990E4A0D-8CA6-42F8-8577-3C8F591EE882}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.RemoveDuplicatesFromSortedArray", "01_Arrays\LeetCode.RemoveDuplicatesFromSortedArray\LeetCode.RemoveDuplicatesFromSortedArray.csproj", "{990E4A0D-8CA6-42F8-8577-3C8F591EE882}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
