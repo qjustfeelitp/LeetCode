@@ -1,10 +1,36 @@
 ﻿using System;
+using System.Collections.Generic;
+
+using BenchmarkDotNet.Attributes;
+#if !DEBUG
+using BenchmarkDotNet.Running;
+
+#endif
 
 namespace LeetCode.MergeSortedArray
 {
     internal static class Program
     {
         public static void Main(string[] args)
+        {
+            Runner.RunAll();
+
+#if !DEBUG
+            BenchmarkRunner.Run<Runner>();
+#endif
+        }
+    }
+
+    [MemoryDiagnoser]
+    public class Runner
+    {
+        private readonly int[] benchmarkFirstNumbers = { 1, 2, 3, 0, 0, 0 };
+        private readonly int[] benchmarkSecondNumbers = { 2, 5, 6 };
+
+        private const int M = 3;
+        private const int N = 3;
+
+        public static void RunAll()
         {
             int[] firstNumbers  = { 1, 2, 3, 0, 0, 0 },
                   secondNumbers = { 2, 5, 6 };
@@ -30,9 +56,17 @@ namespace LeetCode.MergeSortedArray
             {
                 Console.Write(number);
             }
+
+            Console.WriteLine();
         }
 
-        public static void Merge_ExampleOne(int[] firstNumbers, int m, int[] secondNumbers, int n)
+        [Benchmark]
+        public void Run_ExampleOne()
+        {
+            Merge_ExampleOne(this.benchmarkFirstNumbers, M, this.benchmarkSecondNumbers, N);
+        }
+
+        private static void Merge_ExampleOne(int[] firstNumbers, int m, IReadOnlyList<int> secondNumbers, int n)
         {
             for (int i = 0,
                      j = m;
@@ -45,7 +79,13 @@ namespace LeetCode.MergeSortedArray
             Array.Sort(firstNumbers);
         }
 
-        public static void Merge_ExampleTwo(int[] firstNumbers, int m, int[] secondNumbers, int n)
+        [Benchmark]
+        public void Run_ExampleTwo()
+        {
+            Merge_ExampleTwo(this.benchmarkFirstNumbers, M, this.benchmarkSecondNumbers, N);
+        }
+
+        private static void Merge_ExampleTwo(int[] firstNumbers, int m, int[] secondNumbers, int n)
         {
             Array.Copy(secondNumbers, 0, firstNumbers, m, n);
             Array.Sort(firstNumbers);

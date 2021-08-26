@@ -2,11 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using BenchmarkDotNet.Attributes;
+#if !DEBUG
+using BenchmarkDotNet.Running;
+
+#endif
+
 namespace LeetCode.FindMaxConsecutiveOnes
 {
     internal static class Program
     {
         public static void Main(string[] args)
+        {
+            Runner.RunAll();
+
+#if !DEBUG
+            BenchmarkRunner.Run<Runner>();
+#endif
+        }
+    }
+
+    [MemoryDiagnoser]
+    public class Runner
+    {
+        private readonly int[] benchmarkNumbers = { 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1 };
+
+        public static void RunAll()
         {
             int[] numbers = { 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1 };
             int   result1 = FindMaxConsecutiveOnes_ExampleOne(numbers);
@@ -16,7 +37,13 @@ namespace LeetCode.FindMaxConsecutiveOnes
             Console.WriteLine(result2);
         }
 
-        public static int FindMaxConsecutiveOnes_ExampleOne(int[] numbers)
+        [Benchmark]
+        public int Run_ExampleOne()
+        {
+            return FindMaxConsecutiveOnes_ExampleOne(this.benchmarkNumbers);
+        }
+
+        private static int FindMaxConsecutiveOnes_ExampleOne(IEnumerable<int> numbers)
         {
             var projectedValues = numbers.Select((number, index) => new { number, index })
                                          .Where(x => x.number == 1)
@@ -54,7 +81,13 @@ namespace LeetCode.FindMaxConsecutiveOnes
             return list.Max();
         }
 
-        public static int FindMaxConsecutiveOnes_ExampleTwo(int[] numbers)
+        [Benchmark]
+        public int Run_ExampleTwo()
+        {
+            return FindMaxConsecutiveOnes_ExampleTwo(this.benchmarkNumbers);
+        }
+
+        private static int FindMaxConsecutiveOnes_ExampleTwo(IEnumerable<int> numbers)
         {
             int count  = 0;
             int result = 0;

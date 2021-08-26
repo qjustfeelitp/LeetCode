@@ -1,11 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+
+using BenchmarkDotNet.Attributes;
+#if !DEBUG
+using BenchmarkDotNet.Running;
+
+#endif
 
 namespace LeetCode.CheckIfNAndItsDoubleExist
 {
     internal static class Program
     {
         public static void Main(string[] args)
+        {
+            Runner.RunAll();
+
+#if !DEBUG
+            BenchmarkRunner.Run<Runner>();
+#endif
+        }
+    }
+
+    [MemoryDiagnoser]
+    public class Runner
+    {
+        private readonly int[] benchmarkNumbers = { -2, 0, 10, -19, 4, 6, -8 };
+
+        public static void RunAll()
         {
             int[] numbers = { -2, 0, 10, -19, 4, 6, -8 };
 
@@ -18,11 +40,17 @@ namespace LeetCode.CheckIfNAndItsDoubleExist
             Console.WriteLine(CheckIfExist_ExampleThree(numbers));
         }
 
-        public static bool CheckIfExist_ExampleOne(int[] arr)
+        [Benchmark]
+        public bool Run_ExampleOne()
         {
-            for (int i = 0; i < arr.Length; i++)
+            return CheckIfExist_ExampleOne(this.benchmarkNumbers);
+        }
+
+        private static bool CheckIfExist_ExampleOne(IReadOnlyList<int> arr)
+        {
+            for (int i = 0; i < arr.Count; i++)
             {
-                for (int j = 0; j < arr.Length; j++)
+                for (int j = 0; j < arr.Count; j++)
                 {
                     if (i == j)
                     {
@@ -41,7 +69,13 @@ namespace LeetCode.CheckIfNAndItsDoubleExist
             return false;
         }
 
-        public static bool CheckIfExist_ExampleTwo(int[] arr)
+        [Benchmark]
+        public bool Run_ExampleTwo()
+        {
+            return CheckIfExist_ExampleTwo(this.benchmarkNumbers);
+        }
+
+        private static bool CheckIfExist_ExampleTwo(int[] arr)
         {
             return arr.Where((t1, i) => (from t in arr.Where((_, j) => i != j)
                                          let a = t1 * 2
@@ -50,7 +84,13 @@ namespace LeetCode.CheckIfNAndItsDoubleExist
                       .Any();
         }
 
-        public static bool CheckIfExist_ExampleThree(int[] arr)
+        [Benchmark]
+        public bool Run_ExampleThree()
+        {
+            return CheckIfExist_ExampleThree(this.benchmarkNumbers);
+        }
+
+        private static bool CheckIfExist_ExampleThree(int[] arr)
         {
             var asSpan = arr.AsSpan();
 

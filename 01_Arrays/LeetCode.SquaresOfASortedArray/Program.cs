@@ -1,11 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+
+using BenchmarkDotNet.Attributes;
+#if !DEBUG
+using BenchmarkDotNet.Running;
+
+#endif
 
 namespace LeetCode.SquaresOfASortedArray
 {
     internal static class Program
     {
         public static void Main(string[] args)
+        {
+            Runner.RunAll();
+
+#if !DEBUG
+            BenchmarkRunner.Run<Runner>();
+#endif
+        }
+    }
+
+    [MemoryDiagnoser]
+    public class Runner
+    {
+        private readonly int[] benchmarkNumbers = { -4, -1, 0, 3, 10 };
+
+        public static void RunAll()
         {
             int[] numbers = { -4, -1, 0, 3, 10 };
 
@@ -22,14 +44,26 @@ namespace LeetCode.SquaresOfASortedArray
             }
         }
 
-        public static int[] SortedSquares_ExampleOne(int[] numbers)
+        [Benchmark]
+        public int[] Run_ExampleOne()
+        {
+            return SortedSquares_ExampleOne(this.benchmarkNumbers.ToArray());
+        }
+
+        private static int[] SortedSquares_ExampleOne(IEnumerable<int> numbers)
         {
             return numbers.Select(x => (int) Math.Pow(Math.Abs(x), 2)).OrderBy(x => x).ToArray();
         }
 
-        public static int[] SortedSquares_ExampleTwo(int[] numbers)
+        [Benchmark]
+        public int[] Run_ExampleTwo()
         {
-            var finalSpan = new Span<int>(numbers);
+            return SortedSquares_ExampleTwo(this.benchmarkNumbers.ToArray());
+        }
+
+        private static int[] SortedSquares_ExampleTwo(int[] numbers)
+        {
+            var finalSpan = numbers.AsSpan();
 
             for (int i = 0; i < numbers.Length; i++)
             {
