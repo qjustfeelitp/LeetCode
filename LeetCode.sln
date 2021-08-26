@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.RemoveElement", "0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.RemoveDuplicatesFromSortedArray", "01_Arrays\LeetCode.RemoveDuplicatesFromSortedArray\LeetCode.RemoveDuplicatesFromSortedArray.csproj", "{990E4A0D-8CA6-42F8-8577-3C8F591EE882}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.CheckIfNAndItsDoubleExist", "01_Arrays\LeetCode.CheckIfNAndItsDoubleExist\LeetCode.CheckIfNAndItsDoubleExist.csproj", "{7C22C1C3-01E5-44F9-AC90-DB9941124BC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.CheckIfNAndItsDoubleExist", "01_Arrays\LeetCode.CheckIfNAndItsDoubleExist\LeetCode.CheckIfNAndItsDoubleExist.csproj", "{7C22C1C3-01E5-44F9-AC90-DB9941124BC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.ValidMountainArray", "01_Arrays\LeetCode.ValidMountainArray\LeetCode.ValidMountainArray.csproj", "{B1916DB6-2B4A-4839-9FDF-FFE699E01CA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{7C22C1C3-01E5-44F9-AC90-DB9941124BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C22C1C3-01E5-44F9-AC90-DB9941124BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C22C1C3-01E5-44F9-AC90-DB9941124BC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1916DB6-2B4A-4839-9FDF-FFE699E01CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1916DB6-2B4A-4839-9FDF-FFE699E01CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1916DB6-2B4A-4839-9FDF-FFE699E01CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1916DB6-2B4A-4839-9FDF-FFE699E01CA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{89DA2FA9-B349-4141-9C57-5358B111C6B4} = {8C98FBB4-87FA-4D67-870C-45F6AD5D7634}
 		{990E4A0D-8CA6-42F8-8577-3C8F591EE882} = {8C98FBB4-87FA-4D67-870C-45F6AD5D7634}
 		{7C22C1C3-01E5-44F9-AC90-DB9941124BC6} = {8C98FBB4-87FA-4D67-870C-45F6AD5D7634}
+		{B1916DB6-2B4A-4839-9FDF-FFE699E01CA7} = {8C98FBB4-87FA-4D67-870C-45F6AD5D7634}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {483BDE4A-B4D5-4DCA-B0C1-010B413B8843}
