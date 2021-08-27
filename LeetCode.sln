@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.HeightChecker", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.ThirdMax", "01_Arrays\LeetCode.ThirdMax\LeetCode.ThirdMax.csproj", "{CCBAF902-5335-45D9-A2F8-DCC450FC567D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.FindAllNumbersDisappearedInAnArray", "01_Arrays\LeetCode.FindAllNumbersDisappearedInAnArray\LeetCode.FindAllNumbersDisappearedInAnArray.csproj", "{DC8FA3F1-0947-40D2-9599-2623BA810F2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{CCBAF902-5335-45D9-A2F8-DCC450FC567D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCBAF902-5335-45D9-A2F8-DCC450FC567D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCBAF902-5335-45D9-A2F8-DCC450FC567D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC8FA3F1-0947-40D2-9599-2623BA810F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC8FA3F1-0947-40D2-9599-2623BA810F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC8FA3F1-0947-40D2-9599-2623BA810F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC8FA3F1-0947-40D2-9599-2623BA810F2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +120,7 @@ Global
 		{EFEA68FE-0A3D-41BE-9056-C2990D0DC75C} = {8C98FBB4-87FA-4D67-870C-45F6AD5D7634}
 		{155E7967-6C5C-4EA0-B21E-CC6751B3B17A} = {8C98FBB4-87FA-4D67-870C-45F6AD5D7634}
 		{CCBAF902-5335-45D9-A2F8-DCC450FC567D} = {8C98FBB4-87FA-4D67-870C-45F6AD5D7634}
+		{DC8FA3F1-0947-40D2-9599-2623BA810F2C} = {8C98FBB4-87FA-4D67-870C-45F6AD5D7634}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {483BDE4A-B4D5-4DCA-B0C1-010B413B8843}
