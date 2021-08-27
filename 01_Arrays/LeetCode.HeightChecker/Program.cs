@@ -34,11 +34,11 @@ namespace LeetCode.HeightChecker
             RunExample(HeightChecker_ExampleFour);
         }
 
-        private static void RunExample(Func<int[], int> moveZeroesFunc)
+        private static void RunExample(Func<int[], int> heightCheckerFunc)
         {
             int[] numbers = { 1, 1, 4, 2, 1, 3 };
 
-            int result = moveZeroesFunc(numbers);
+            int result = heightCheckerFunc(numbers);
 
             Console.WriteLine(result);
             Console.WriteLine(new string('-', 50));

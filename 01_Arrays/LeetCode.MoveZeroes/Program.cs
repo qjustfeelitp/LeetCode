@@ -42,11 +42,11 @@ namespace LeetCode.MoveZeroes
             RunExample(MoveZeroes_ExampleTwo);
         }
 
-        private static void RunExample(Action<int[]> moveZeroesFunc)
+        private static void RunExample(Action<int[]> moveZeroesAction)
         {
             int[] numbers = { 0, 1, 0, 3, 12 };
 
-            moveZeroesFunc(numbers);
+            moveZeroesAction(numbers);
 
             foreach (int number in numbers)
             {
