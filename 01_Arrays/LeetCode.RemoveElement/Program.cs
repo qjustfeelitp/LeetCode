@@ -51,7 +51,7 @@ namespace LeetCode.RemoveElement
             return RemoveElement(this.benchmarkNumbers, Value);
         }
 
-        public static int RemoveElement(int[] numbers, int val)
+        private static int RemoveElement(int[] numbers, int val)
         {
             int numberOfDeletions = numbers.Count(x => x == val);
 
