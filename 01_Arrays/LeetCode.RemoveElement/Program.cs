@@ -48,7 +48,7 @@ namespace LeetCode.RemoveElement
         [Benchmark]
         public int Run_RemoveDuplicates()
         {
-            return RemoveElement(this.benchmarkNumbers, Value);
+            return RemoveElement(this.benchmarkNumbers.ToArray(), Value);
         }
 
         private static int RemoveElement(int[] numbers, int val)

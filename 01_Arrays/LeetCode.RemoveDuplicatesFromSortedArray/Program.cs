@@ -29,15 +29,21 @@ namespace LeetCode.RemoveDuplicatesFromSortedArray
 
         public static void RunAll()
         {
+            RunExample(RemoveDuplicates_ExampleOne);
+            RunExample(RemoveDuplicates_ExampleTwo);
+        }
+
+        private static void RunExample(Func<int[], int> removeDuplicatesFunc)
+        {
             int[] numbers = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
-            int   result  = RemoveDuplicates(numbers);
+            int   result  = removeDuplicatesFunc(numbers);
 
             Console.WriteLine(result);
             Console.WriteLine(new string('-', 50));
 
             foreach (int number in numbers)
             {
-                Console.WriteLine(number);
+                Console.Write(number + ", ");
             }
 
             Console.WriteLine();
@@ -45,18 +51,47 @@ namespace LeetCode.RemoveDuplicatesFromSortedArray
         }
 
         [Benchmark]
-        public int Run_RemoveDuplicates()
+        public int Run_ExampleOne()
         {
-            return RemoveDuplicates(this.benchmarkNumbers);
+            return RemoveDuplicates_ExampleOne(this.benchmarkNumbers.ToArray());
         }
 
-        private static int RemoveDuplicates(int[] numbers)
+        private static int RemoveDuplicates_ExampleOne(int[] numbers)
         {
             int[] fromHashSet = new HashSet<int>(numbers).ToArray();
 
             Array.Copy(fromHashSet, numbers, fromHashSet.Length);
 
             return fromHashSet.Length;
+        }
+
+        [Benchmark]
+        public int Run_ExampleTwo()
+        {
+            return RemoveDuplicates_ExampleTwo(this.benchmarkNumbers.ToArray());
+        }
+
+        private static int RemoveDuplicates_ExampleTwo(int[] numbers)
+        {
+            int size = numbers.Length;
+            if (size == 0)
+            {
+                return 0;
+            }
+
+            int i = 0;
+            for (int j = 1; j < size; j++)
+            {
+                if (numbers[j] == numbers[i])
+                {
+                    continue;
+                }
+
+                i++;
+                numbers[i] = numbers[j];
+            }
+
+            return i + 1;
         }
     }
 }

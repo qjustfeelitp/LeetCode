@@ -33,11 +33,11 @@ namespace LeetCode.ReplaceElementsWithGreatestElementOnRightSide
             RunExample(ReplaceElements_ExampleFour);
         }
 
-        private static void RunExample(Func<int[], int[]> getArrayFunc)
+        private static void RunExample(Func<int[], int[]> replaceElementsFunc)
         {
             int[] numbers = { 17, 18, 5, 4, 6, 1 };
 
-            foreach (int number in getArrayFunc(numbers))
+            foreach (int number in replaceElementsFunc(numbers))
             {
                 Console.Write(number + ", ");
             }

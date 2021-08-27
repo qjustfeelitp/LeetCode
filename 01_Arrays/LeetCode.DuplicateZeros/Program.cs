@@ -68,7 +68,7 @@ namespace LeetCode.DuplicateZeros
         [Benchmark]
         public void Run_ExampleOne()
         {
-            DuplicateZeros_ExampleOne(this.benchmarkNumbers);
+            DuplicateZeros_ExampleOne(this.benchmarkNumbers.ToArray());
         }
 
         private static void DuplicateZeros_ExampleOne(IList<int> arr)
@@ -101,7 +101,7 @@ namespace LeetCode.DuplicateZeros
         [Benchmark]
         public void Run_ExampleTwo()
         {
-            DuplicateZeros_ExampleTwo(this.benchmarkNumbers);
+            DuplicateZeros_ExampleTwo(this.benchmarkNumbers.ToArray());
         }
 
         private static void DuplicateZeros_ExampleTwo(IList<int> arr)
@@ -126,7 +126,7 @@ namespace LeetCode.DuplicateZeros
         [Benchmark]
         public void Run_ExampleThree()
         {
-            DuplicateZeros_ExampleThree(this.benchmarkNumbers);
+            DuplicateZeros_ExampleThree(this.benchmarkNumbers.ToArray());
         }
 
         private static void DuplicateZeros_ExampleThree(IList<int> arr)

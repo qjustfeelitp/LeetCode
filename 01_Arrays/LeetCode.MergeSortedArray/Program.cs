@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using BenchmarkDotNet.Attributes;
 #if !DEBUG
@@ -63,7 +64,7 @@ namespace LeetCode.MergeSortedArray
         [Benchmark]
         public void Run_ExampleOne()
         {
-            Merge_ExampleOne(this.benchmarkFirstNumbers, M, this.benchmarkSecondNumbers, N);
+            Merge_ExampleOne(this.benchmarkFirstNumbers.ToArray(), M, this.benchmarkSecondNumbers.ToArray(), N);
         }
 
         private static void Merge_ExampleOne(int[] firstNumbers, int m, IReadOnlyList<int> secondNumbers, int n)
@@ -82,7 +83,7 @@ namespace LeetCode.MergeSortedArray
         [Benchmark]
         public void Run_ExampleTwo()
         {
-            Merge_ExampleTwo(this.benchmarkFirstNumbers, M, this.benchmarkSecondNumbers, N);
+            Merge_ExampleTwo(this.benchmarkFirstNumbers.ToArray(), M, this.benchmarkSecondNumbers.ToArray(), N);
         }
 
         private static void Merge_ExampleTwo(int[] firstNumbers, int m, int[] secondNumbers, int n)
